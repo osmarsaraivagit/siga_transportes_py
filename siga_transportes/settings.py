@@ -37,6 +37,18 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'apps.empresas',
+    'apps.cidades',
+    'apps.estados',
+    'apps.documentos',
+    'apps.fornecedores',
+    'apps.frotas',
+    'apps.funcionarios',
+    'apps.plano_contas',
+    'apps.situacoes',
+    'apps.tipos_veiculos',
+    'apps.veiculos'
+
 ]
 
 MIDDLEWARE = [
