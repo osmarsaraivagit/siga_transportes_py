@@ -6,13 +6,22 @@ from apps.situacoes.models import Situacao
 
 
 class Veiculo(models.Model):
-    fk_tipo_veiculo = models.ForeignKey(TipoVeiculo, on_delete=models.PROTECT)
-    marca = models.CharField(max_length=80)
-    modelo = models.CharField(max_length=80)
-    placas = models.CharField(max_length=80)
-    datacompra = models.DateField(db_column='dataCompra')  # Field name made lowercase.
-    fk_empresa = models.ForeignKey(Empresa, on_delete=models.PROTECT)
-    fk_frota = models.ForeignKey(Frota, on_delete=models.PROTECT)
-    tipo_aquisicao = models.CharField(max_length=50)
-    km_inicial = models.IntegerField()
-    fk_situacao = models.ForeignKey(Situacao, on_delete=models.PROTECT)
+    tipo_veiculo = models.ForeignKey(TipoVeiculo, null=True, on_delete=models.SET_NULL)
+    marca = models.CharField(max_length=80, blank=False, null=False)
+    modelo = models.CharField(max_length=80, blank=False, null=False)
+    ano = models.IntegerField(null=False, blank=True)
+    data_fabricacao = models.DateField(null=False, blank=True)
+    renavam = models.IntegerField(null=False, blank=True)
+    placas = models.CharField(max_length=80, blank=False, null=False)
+    datacompra = models.DateField('data', null=False, blank=True)  # Field name made lowercase.
+    valor = models.DecimalField(max_digits=12, decimal_places=2)
+    empresa = models.ForeignKey(Empresa, null=True, on_delete=models.SET_NULL)
+    frota = models.ForeignKey(Frota, null=True, on_delete=models.SET_NULL)
+    tipo_aquisicao = models.CharField(max_length=50, blank=False, null=False)
+    km_inicial = models.IntegerField(null=False, blank=True)
+    situacoes = models.ForeignKey(Situacao, null=True, on_delete=models.SET_NULL)
+    obs = models.CharField(max_length=100, blank=False, null=False)
+
+
+    class Meta:
+        db_table = 'veiculo'

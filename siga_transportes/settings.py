@@ -38,6 +38,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'apps.empresas',
+    'apps.clientes',
     'apps.cidades',
     'apps.estados',
     'apps.documentos',
@@ -47,7 +48,19 @@ INSTALLED_APPS = [
     'apps.plano_contas',
     'apps.situacoes',
     'apps.tipos_veiculos',
-    'apps.veiculos'
+    'apps.veiculos',
+    'apps.lancar_viagem',
+    'apps.pais',
+    'apps.origem',
+    'apps.destino',
+    'apps.exames',
+    'apps.forma_pagamento',
+    'apps.funcao',
+    'apps.lancar_acerto_viagem',
+    'apps.lancar_despesas_viagem',
+    'apps.lancar_receitas_viagem',
+    'apps.lancar_docs_veiculos'
+
 
 ]
 
